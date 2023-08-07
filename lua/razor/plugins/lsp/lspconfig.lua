@@ -83,11 +83,48 @@ lspconfig["tailwindcss"].setup({
 	on_attach = on_attach,
 })
 
+--  Svelte
+lspconfig["svelte"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+
+-- Prisma
+lspconfig["prisma"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- Docker
+lspconfig["dockerls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- configure emmet language server
 lspconfig["emmet_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+})
+
+-- Go
+lspconfig["gopls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- Rust
+lspconfig["rust_analyzer"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- Python
+lspconfig["pyright"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 -- configure lua server (with special settings)

@@ -1,6 +1,9 @@
-local status, _ = pcall(vim.cmd, "colorscheme onedark")
-if not status then 
-  print ("Colorscheme not found!")
-  return 
-end 
+-- Set Colorscheme
+local status, err = pcall(function()
+	vim.cmd("colorscheme kanagawa")
+end)
 
+if not status then
+	print("Error setting colorscheme: " .. err)
+	return
+end
