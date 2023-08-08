@@ -89,13 +89,6 @@ lspconfig["svelte"].setup({
 	on_attach = on_attach,
 })
 
-
--- Prisma
-lspconfig["prisma"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
 -- Docker
 lspconfig["dockerls"].setup({
 	capabilities = capabilities,

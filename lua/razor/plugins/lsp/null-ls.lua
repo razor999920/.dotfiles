@@ -1,7 +1,7 @@
 -- import null-ls plugin safely
 local setup, null_ls = pcall(require, "null-ls")
 if not setup then
-  return
+	return
 end
 
 -- for conciseness
@@ -19,12 +19,37 @@ null_ls.setup({
     --  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
     formatting.prettier, -- js/ts formatter
     formatting.stylua, -- lua formatter
+    formatting.goimports, -- go formatter
+    formatting.golines, -- go formatter
+    formatting.autoflake, -- python formatter
+    formatting.autopep8, -- python formatter
+    formatting.sql_formatter, --  sql  formatter
+    diagnostics.hadolint.with({ -- Docker linter
+      condition = function(utils)
+        return utils.root_has_file(".yaml")
+      end,
+    }),
     diagnostics.eslint_d.with({ -- js/ts linter
       -- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
       condition = function(utils)
         return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
       end,
     }),
+    diagnostics.golangci_lint.with({ -- Go linter
+      condition = function(utils)
+        return utils.root_has_file(".go")
+      end,
+    }),
+    diagnostics.flake8.with({ -- Python linter
+      condition = function(utils)
+        return utils.root_has_file(".py")
+      end,
+    }),
+    diagnostics.sqlfluff.with({ -- sql linter
+      condition = function(utils)
+        return utils.root_has_file(".py")
+      end,
+    })
   },
   -- configure format on save
   on_attach = function(current_client, bufnr)

@@ -27,7 +27,6 @@ mason_lspconfig.setup({
 		"tsserver",
 		"svelte",
 		"tailwindcss",
-		"prisma",
 		"graphql",
 		"dockerls",
 		"docker_compose_language_service",
@@ -41,11 +40,20 @@ mason_lspconfig.setup({
 })
 
 mason_null_ls.setup({
-	-- list of formatters & linters for mason to install
-	ensure_installed = {
-		"prettier", -- ts/js formatter
-		"stylua", -- lua formatter
-		"eslint_d", -- ts/js linter
+  -- list of formatters & linters for mason to install
+  ensure_installed = {
+    "prettier", -- ts/js formatter
+    "stylua", -- lua formatter
+    "goimports", -- go formatter
+    "golines", -- go formatter
+    "autoflake", -- python formatter
+    "autopep8", -- python formatter
+    "sql-formatter", -- sql formatter
+    "hadolint", -- docker linter
+    "eslint_d", -- ts/js linter
+    "golangci-lint", -- go linter
+    "flake8", -- python linter
+    "sqlfluff" -- sql linter
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
