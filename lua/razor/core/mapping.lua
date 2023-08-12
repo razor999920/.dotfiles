@@ -33,9 +33,6 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 -- Exit insert mode
 keymap.set("i", "jk", "<ESC>")
 
--- Save file
-keymap.set("i", "<leader>s", ":w")
-
 ----------------------
 -- Plugin Keybinds
 ----------------------

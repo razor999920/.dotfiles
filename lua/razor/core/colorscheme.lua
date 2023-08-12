@@ -1,6 +1,6 @@
 -- Set Colorscheme
 local status, err = pcall(function()
-	vim.cmd("colorscheme kanagawa")
+	vim.cmd("colorscheme gruvbox") -- onedark -- kanagawa -- kanagawa-dragon
 end)
 
 if not status then

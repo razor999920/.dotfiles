@@ -31,16 +31,17 @@ return packer.startup(function(use)
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
 
-	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
+	-- lua functions that many plugins use
+	use("nvim-lua/plenary.nvim")
 
 	-- Preferred Colorscheme
-	-- use("bluz71/vim-nightfly-guicolors")
-	-- use { "catppuccin/nvim", as = "catppuccin" }
-	-- use ({ 'projekt0n/github-nvim-theme' })
+	-- use({ "catppuccin/nvim", as = "catppuccin" })
+	-- use("rebelot/kanagawa.nvim")
 	-- use("olimorris/onedarkpro.nvim")
-	use("rebelot/kanagawa.nvim")
+	use("ellisonleao/gruvbox.nvim")
 
-	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
+	-- tmux & split window navigation
+	use("christoomey/vim-tmux-navigator")
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
 	-- essential plugins
@@ -50,9 +51,8 @@ return packer.startup(function(use)
 	-- commenting with gc
 	use("numToStr/Comment.nvim")
 
-	-- file explorer nvim-tree
+	-- file explorer nvim-tree & vs-code like icons
 	-- use("nvim-tree/nvim-tree.lua")
-	-- vs-code like icons
 	-- use("nvim-tree/nvim-web-devicons")
 
 	-- DaikyXendo nvim-tree & icons
