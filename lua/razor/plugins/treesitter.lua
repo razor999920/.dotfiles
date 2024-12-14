@@ -1,22 +1,46 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  event = { "BufReadPre", "BufNewFile" },
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
-    "windwp/nvim-ts-autotag",
+    'windwp/nvim-ts-autotag',
     'nvim-treesitter/nvim-treesitter-textobjects',
+    -- Add parser for templ
+    { 'vrischmann/tree-sitter-templ' },
   },
   build = ':TSUpdate',
   config = function()
-    local treesitter = require('nvim-treesitter.configs')
-
+    local treesitter = require 'nvim-treesitter.configs'
     treesitter.setup {
-      highlight = { enable = true },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
       indent = { enable = true },
-      autotag = { enable = true },
-
+      autotag = {
+        enable = true,
+        enable_close_on_slash = true,
+      },
       -- Add languages to be installed here that you want installed for treesitter
-      ensure_installed = { 'c', 'java', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'json', 'yaml', 'html', 'css', 'svelte', },
-
+      ensure_installed = {
+        'c',
+        'java',
+        'go',
+        'lua',
+        'python',
+        'rust',
+        'tsx',
+        'javascript',
+        'typescript',
+        'vimdoc',
+        'vim',
+        'bash',
+        'json',
+        'yaml',
+        'html',
+        'css',
+        'svelte',
+        'templ', -- Added Templ support
+      },
       incremental_selection = {
         enable = true,
         keymaps = {
@@ -26,7 +50,6 @@ return {
           node_decremental = '<M-space>',
         },
       },
-
       textobjects = {
         select = {
           enable = true,

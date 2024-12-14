@@ -19,14 +19,13 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   config = function()
-    local telescope = require('telescope')
-    local actions = require('telescope.actions')
+    local telescope = require 'telescope'
 
     -- [[ Configure Telescope ]]
     -- See `:help telescope` and `:help telescope.setup()`
-    telescope.setup ({
+    telescope.setup {
       defaults = {
-        path_display  = {"smart"},
+        path_display = { 'smart' },
         mappings = {
           i = {
             ['<C-u>'] = false,
@@ -34,10 +33,10 @@ return {
           },
         },
       },
-    })
+    }
 
     -- Enable telescope fzf native, if installed
-    telescope.load_extension('fzf')
+    telescope.load_extension 'fzf'
 
     local function telescope_live_grep_open_files()
       require('telescope.builtin').live_grep {
@@ -47,7 +46,7 @@ return {
     end
 
     -- Keymap
-    local keymap = vim.keymap 
+    local keymap = vim.keymap
 
     keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
     keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
@@ -69,6 +68,5 @@ return {
     keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
     keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
     keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
-
-  end
+  end,
 }

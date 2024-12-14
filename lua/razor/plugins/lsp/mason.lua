@@ -29,7 +29,7 @@ return {
     mason_lspconfig.setup {
       -- list of servers for mason to install
       ensure_installed = {
-        'tsserver',
+        'eslint',
         'html',
         'cssls',
         'tailwindcss',
@@ -38,6 +38,8 @@ return {
         'eslint',
         'gopls',
         'pyright',
+        'templ',
+        'templ',
       },
     }
 
@@ -50,6 +52,12 @@ return {
         'pylint',
         'eslint_d',
         'golangci-lint',
+        'gofumpt',
+        'goimports',
+        'typescript-language-server',
+        'tailwindcss-language-server',
+        'dockerfile-language-server',
+        'docker-compose-language-service',
       },
     }
 
