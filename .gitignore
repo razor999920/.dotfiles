@@ -43,3 +43,7 @@ luac.out
 plugin
 
 .DS_Store
+
+raycast/
+wezterm/
+zed/

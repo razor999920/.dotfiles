@@ -1,0 +1,12 @@
+theme = catppuccin-mocha
+# theme = GruvboxDarkHard
+font-family = CaskaydiaCove Nerd Font
+font-size = 16
+cursor-style = block
+adjust-cell-height = 20%
+background-opacity = 0.96
+mouse-scroll-multiplier = 2
+macos-titlebar-style = hidden
+window-padding-balance = true
+window-save-state = always
+window-colorspace = "display-p3"
